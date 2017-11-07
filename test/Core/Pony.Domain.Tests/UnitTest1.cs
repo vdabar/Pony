@@ -1,10 +1,10 @@
 using System;
 using Xunit;
 
-namespace Pony.Data.Tests
+namespace Pony.Domain.Tests
 {
     public class UnitTest1
     {
-       
+        
     }
 }

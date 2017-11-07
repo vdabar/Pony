@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Framework.Events
+namespace Pony.Domain.Maze
 {
-    public interface IEventHandler<in TEvent> where TEvent : IEvent
+    public interface IMazeRepository
     {
-        void Handle(TEvent @event);
+        Maze GetById(Guid Id);
+
+        void Create(Maze maze);
     }
 }

@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Data.Entities
+namespace Pony.Domain.Maze
 {
-    public class RoomElement
+    public class RoomElement:ValueObject
     {
         public Guid Id { get; set; }
-        public ElementNames  ElementName { get; set; }
+        public ElementNames ElementName { get; set; }
         public Room Room { get; set; }
     }
     public enum ElementNames
@@ -21,6 +21,6 @@ namespace Pony.Data.Entities
         WestWall,
         Pony,
         Domokun,
-        EndPoint
+        E
     }
 }

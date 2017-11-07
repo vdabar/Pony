@@ -6,18 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pony.Framework.Events;
+using FluentValidation;
 
 namespace Pony.Domain.Maze.Handlers
 {
     public class CreateMazeHandler : ICommandHandlerAsync<CreateMaze>
     {
-        public CreateMazeHandler()
-        {
+        private readonly IValidator<CreateMaze> _validator;
 
-        }
-        public Task<IEnumerable<IEvent>> HandleAsync(CreateMaze command)
+        public CreateMazeHandler(IValidator<CreateMaze> validator)
         {
-            throw new NotImplementedException();
+            _validator = validator;
+        }
+        public async Task<IEnumerable<IEvent>> HandleAsync(CreateMaze command)
+        {
+            var maze = Maze.CreateNew(command, _validator);
+
+            return maze.Events;
         }
     }
 }

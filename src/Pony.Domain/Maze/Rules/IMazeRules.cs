@@ -9,6 +9,6 @@ namespace Pony.Domain.Maze.Rules
 {
     public interface IMazeRules:IRules<Maze>
     {
-        
+        bool IsPonyNameValidAsync(string name);
     }
 }

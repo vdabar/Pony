@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pony.Domain\Pony.Domain.csproj" />
     <ProjectReference Include="..\Pony.Framework\Pony.Framework.csproj" />
   </ItemGroup>
 

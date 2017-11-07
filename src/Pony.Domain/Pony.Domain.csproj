@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Pony.Framework\Pony.Framework.csproj" />
   </ItemGroup>
 

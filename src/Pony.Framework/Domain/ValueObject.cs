@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Framework.Events
+namespace Pony.Framework.Domain
 {
-    public interface IEventHandler<in TEvent> where TEvent : IEvent
+    public abstract class ValueObject
     {
-        void Handle(TEvent @event);
     }
 }
