@@ -9,17 +9,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CE708F3C-362
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{88D6C515-1F16-4F71-A277-2FD5301329D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Domain", "src\Pony.Domain\Pony.Domain.csproj", "{B2286B56-A28F-4648-844C-BA50E5CBAB51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Domain", "src\Pony.Domain\Pony.Domain.csproj", "{B2286B56-A28F-4648-844C-BA50E5CBAB51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3EA7ECE0-0677-4C42-9F1A-5D72AB2BC0E3} = {3EA7ECE0-0677-4C42-9F1A-5D72AB2BC0E3}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Services", "src\Pony.Services\Pony.Services.csproj", "{2C50CFDA-A78E-458D-A690-7676D4FDED16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Services", "src\Pony.Services\Pony.Services.csproj", "{2C50CFDA-A78E-458D-A690-7676D4FDED16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Framework", "src\Pony.Framework\Pony.Framework.csproj", "{3EA7ECE0-0677-4C42-9F1A-5D72AB2BC0E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Framework", "src\Pony.Framework\Pony.Framework.csproj", "{3EA7ECE0-0677-4C42-9F1A-5D72AB2BC0E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{18867FA5-4C41-4004-B9F3-E16DDDD8A89A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Data", "src\Pony.Data\Pony.Data.csproj", "{931F94F1-A37C-4FF0-90EB-FF537D3BE76D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Data", "src\Pony.Data\Pony.Data.csproj", "{931F94F1-A37C-4FF0-90EB-FF537D3BE76D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Data.Tests", "test\Core\Pony.Data.Tests\Pony.Data.Tests.csproj", "{45B88E05-34F6-462B-B925-9E50748F8B39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Data.Tests", "test\Core\Pony.Data.Tests\Pony.Data.Tests.csproj", "{45B88E05-34F6-462B-B925-9E50748F8B39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
