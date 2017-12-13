@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pony.Domain.Maze.Commands
 {
-    public class CreateMaze:ICommand
+    public class CreateMaze : BaseSiteCommand
     {
         public Guid Id { get; set; }
         public int MazeWidth { get; set; }

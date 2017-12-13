@@ -1,4 +1,5 @@
 ﻿using Pony.Domain.Maze;
+using Pony.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,12 @@ namespace Pony.Data.Repositories
 {
     public class MazeRepository : IMazeRepository
     {
-        public void Create(Maze maze)
+        public async Task CreateAsync(Maze maze)
         {
             throw new NotImplementedException();
         }
 
-        public Maze GetById(Guid Id)
+        public async Task<Maze> GetByIdAsync(Guid Id)
         {
             throw new NotImplementedException();
         }

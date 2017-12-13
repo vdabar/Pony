@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony", "src\Pony\Pony.csproj", "{26219B7E-D3E6-4107-B17D-FD9DC2491A8A}"
 EndProject
@@ -22,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Data", "src\Pony.Data\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Data.Tests", "test\Core\Pony.Data.Tests\Pony.Data.Tests.csproj", "{45B88E05-34F6-462B-B925-9E50748F8B39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Domain.Tests", "test\Core\Pony.Domain.Tests\Pony.Domain.Tests.csproj", "{EB5374D1-4DA9-4D46-89A9-322F29EBBF32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pony.Domain.Tests", "test\Core\Pony.Domain.Tests\Pony.Domain.Tests.csproj", "{EB5374D1-4DA9-4D46-89A9-322F29EBBF32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pony.Services", "Pony.Services\Pony.Services.csproj", "{9FD39B04-E483-4520-A4C4-391B5555B3AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{EB5374D1-4DA9-4D46-89A9-322F29EBBF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5374D1-4DA9-4D46-89A9-322F29EBBF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5374D1-4DA9-4D46-89A9-322F29EBBF32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD39B04-E483-4520-A4C4-391B5555B3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD39B04-E483-4520-A4C4-391B5555B3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD39B04-E483-4520-A4C4-391B5555B3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD39B04-E483-4520-A4C4-391B5555B3AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{931F94F1-A37C-4FF0-90EB-FF537D3BE76D} = {CE708F3C-362B-4B1A-9323-A700D67B9899}
 		{45B88E05-34F6-462B-B925-9E50748F8B39} = {18867FA5-4C41-4004-B9F3-E16DDDD8A89A}
 		{EB5374D1-4DA9-4D46-89A9-322F29EBBF32} = {18867FA5-4C41-4004-B9F3-E16DDDD8A89A}
+		{9FD39B04-E483-4520-A4C4-391B5555B3AE} = {CE708F3C-362B-4B1A-9323-A700D67B9899}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A892613-142F-4943-B942-4A4EAFDFE78F}

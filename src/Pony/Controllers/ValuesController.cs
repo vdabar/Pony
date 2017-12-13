@@ -3,12 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Pony.Domain.Maze;
+using Pony.Domain.Maze.Commands;
+using Pony.Framework.Commands;
 
 namespace Pony.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly ICommandSender _commandSender;
+
+        public ValuesController(ICommandSender commandSender)
+        {
+            _commandSender = commandSender;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -25,8 +35,10 @@ namespace Pony.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]CreateMaze model)
         {
+            _commandSender.Send<CreateMaze, Maze>(model);
+            return new NoContentResult();
         }
 
         // PUT api/values/5

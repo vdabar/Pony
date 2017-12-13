@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Domain.Maze
+namespace Pony.Data.Extensions
 {
-    public interface IMazeRepository
+    public class ServiceCollectionExtensions
     {
-        Maze GetById(Guid Id);
-
-        void Create(Maze maze);
+        
     }
 }

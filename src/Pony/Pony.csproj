@@ -9,11 +9,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pony.Services\Pony.Services.csproj" />
+    <ProjectReference Include="..\Pony.Domain\Pony.Domain.csproj" />
+    <ProjectReference Include="..\Pony.Framework\Pony.Framework.csproj" />
   </ItemGroup>
 
 </Project>
