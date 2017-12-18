@@ -1,16 +1,14 @@
-﻿using Newtonsoft.Json;
-using Pony.Framework.Commands;
+﻿using Pony.Framework.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Domain
+namespace Pony.Domain.Mazes.Events
 {
-    public class BaseDomain : ICommand
+    public class MazeCreated:DomainEvent
     {
-        [JsonIgnore]
         public Guid Id { get; set; }
     }
 }

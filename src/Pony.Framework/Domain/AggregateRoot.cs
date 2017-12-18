@@ -1,4 +1,8 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
+using Pony.Framework.Mongo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +13,7 @@ namespace Pony.Framework.Domain
     public abstract class AggregateRoot : IAggregateRoot
     {
         public Guid Id { get; protected set; }
+
         public ICollection<IDomainEvent> Events { get; protected set; } = new List<IDomainEvent>();
 
         protected AggregateRoot()

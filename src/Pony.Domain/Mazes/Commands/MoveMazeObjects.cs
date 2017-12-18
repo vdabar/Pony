@@ -1,16 +1,17 @@
 ﻿using Newtonsoft.Json;
-using Pony.Framework.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Domain
+namespace Pony.Domain.Mazes.Commands
 {
-    public class BaseDomain : ICommand
+    public class MoveMazeObjects : BaseDomain
     {
         [JsonIgnore]
-        public Guid Id { get; set; }
+        public Guid MazeId { get; set; }
+
+        public string Direction { get; set; }
     }
 }

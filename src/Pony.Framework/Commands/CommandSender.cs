@@ -52,7 +52,7 @@ namespace Pony.Framework.Commands
             {
                 var concreteEvent = EventFactory.CreateConcreteEvent(@event);
 
-                _eventStore.SaveEvent<TAggregate>((IDomainEvent)concreteEvent);
+                //_eventStore.SaveEvent<TAggregate>((IDomainEvent)concreteEvent);
 
                 if (!publishEvents)
                     continue;
@@ -89,12 +89,12 @@ namespace Pony.Framework.Commands
             {
                 var concreteEvent = EventFactory.CreateConcreteEvent(@event);
 
-                await _eventStore.SaveEventAsync<TAggregate>((IDomainEvent)concreteEvent);
+                // await _eventStore.SaveEventAsync<TAggregate>((IDomainEvent)concreteEvent);
 
                 if (!publishEvents)
                     continue;
 
-                await _eventPublisher.PublishAsync(concreteEvent);
+                //await _eventPublisher.PublishAsync(concreteEvent);
             }
         }
 

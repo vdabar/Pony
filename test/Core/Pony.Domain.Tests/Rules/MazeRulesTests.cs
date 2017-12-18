@@ -1,4 +1,4 @@
-﻿using Pony.Domain.Maze.Rules;
+﻿using Pony.Domain.Mazes.Rules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +17,7 @@ namespace Pony.Domain.Tests.Rules
             var result = ur.IsPonyNameValidAsync("Scootaloo");
             Assert.Equal(true, result);
         }
+
         [Fact]
         public void Should_return_false_if_pony_name_doesnt_exists()
         {
@@ -24,6 +25,5 @@ namespace Pony.Domain.Tests.Rules
             var result = ur.IsPonyNameValidAsync("notexistingponyname");
             Assert.Equal(false, result);
         }
-
     }
 }

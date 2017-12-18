@@ -1,7 +1,9 @@
 ﻿using Autofac;
-using Pony.Domain.Maze.Commands;
-using Pony.Domain.Services;
+using Pony.Data;
+using Pony.Domain.Mazes.Commands;
+using Pony.Domain.Repositories;
 using Pony.Framework.Domain;
+using Pony.Reporting.Mazes.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,9 @@ namespace Pony
         {
             var infrastructureAssembly = typeof(AggregateRoot).GetTypeInfo().Assembly;
             var domainAssembly = typeof(CreateMaze).GetTypeInfo().Assembly;
-            //var dataAssembly = typeof(IDataProvider).GetTypeInfo().Assembly;
-            //var reportingAssembly = typeof(GetAppAdminModel).GetTypeInfo().Assembly;
-            var servicesAssembly = typeof(IMazeService).GetTypeInfo().Assembly;
+            var dataAssembly = typeof(IDataProvider).GetTypeInfo().Assembly;
+            var reportingAssembly = typeof(GetMaze).GetTypeInfo().Assembly;
+            //var servicesAssembly = typeof(IMazeService).GetTypeInfo().Assembly;
 
             //builder.RegisterAssemblyTypes(domainAssembly).AsClosedTypesOf(typeof(ICommandHandler<>));
             //builder.RegisterAssemblyTypes(domainAssembly).AsClosedTypesOf(typeof(ICommandHandlerAsync<>));
@@ -39,9 +41,9 @@ namespace Pony
 
             builder.RegisterAssemblyTypes(infrastructureAssembly).AsImplementedInterfaces();
             builder.RegisterAssemblyTypes(domainAssembly).AsImplementedInterfaces();
-            //builder.RegisterAssemblyTypes(dataAssembly).AsImplementedInterfaces();
-            //builder.RegisterAssemblyTypes(reportingAssembly).AsImplementedInterfaces();
-            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(dataAssembly).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(reportingAssembly).AsImplementedInterfaces();
+            //builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
         }
     }
 }

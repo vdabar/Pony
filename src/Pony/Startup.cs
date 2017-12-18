@@ -14,8 +14,12 @@ using Pony.Framework.Commands;
 using Autofac.Extensions.DependencyInjection;
 using Pony.Framework.Extensions;
 using Pony.Framework.DependencyResolver;
-using Pony.Domain.Services;
-using Pony.Services.Services;
+using Pony.Framework.Mongo;
+using Pony.Domain.Repositories;
+using Pony.Data.Repositories;
+using Pony.Extensions;
+using Microsoft.AspNetCore.Hosting.Internal;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Pony
 {
@@ -31,11 +35,18 @@ namespace Pony
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IMazeService, MazeService>();
+            services.AddOptions();
+
+            services.AddMongoDB(Configuration);
+            //services.AddTransient<IMazeService, MazeService>();
             services.AddMvc();
-
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+            services.AddAutoMapper();
             var builder = new ContainerBuilder();
-
+            builder.RegisterModule(new AutofacModule());
             builder.Populate(services);
 
             builder.RegisterModule(new AutofacModule());
@@ -48,6 +59,15 @@ namespace Pony
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
+            app.UseDeveloperExceptionPage();
+            app.UseStatusCodePages();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

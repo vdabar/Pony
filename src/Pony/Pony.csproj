@@ -12,6 +12,7 @@
     <PackageReference Include="Autofac" Version="4.6.2" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,9 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Pony.Services\Pony.Services.csproj" />
+    <ProjectReference Include="..\Pony.Data\Pony.Data.csproj" />
     <ProjectReference Include="..\Pony.Domain\Pony.Domain.csproj" />
     <ProjectReference Include="..\Pony.Framework\Pony.Framework.csproj" />
+    <ProjectReference Include="..\Pony.Reporting\Pony.Reporting.csproj" />
   </ItemGroup>
 
 </Project>

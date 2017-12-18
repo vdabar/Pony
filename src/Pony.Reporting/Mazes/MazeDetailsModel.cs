@@ -1,15 +1,13 @@
-﻿using Pony.Framework.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Data.Entities
+namespace Pony.Reporting.Mazes
 {
-    public class Maze
+    public class MazeDetailsModel
     {
-        public Guid Id { get; set; }
         public int MazeWidth { get; set; }
         public int MazeHeight { get; set; }
         public int Difficulty { get; set; }

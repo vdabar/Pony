@@ -10,12 +10,13 @@ namespace Pony.Framework.Domain
     {
         public void SaveEvent<TAggregate>(IDomainEvent @event) where TAggregate : IAggregateRoot
         {
-            throw new NotImplementedException();
+            //TODO
         }
 
         public Task SaveEventAsync<TAggregate>(IDomainEvent @event) where TAggregate : IAggregateRoot
         {
-            throw new NotImplementedException();
+            //TODO
+            return null;
         }
     }
 }

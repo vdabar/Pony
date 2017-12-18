@@ -1,16 +1,14 @@
-﻿using Newtonsoft.Json;
-using Pony.Framework.Commands;
+﻿using Pony.Framework.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pony.Domain
+namespace Pony.Reporting.Mazes.Queries
 {
-    public class BaseDomain : ICommand
+    public class GetMazeVisualisation : IQuery
     {
-        [JsonIgnore]
         public Guid Id { get; set; }
     }
 }
