@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Pony.Middleware;
 
 namespace Pony.Extensions
 {
@@ -26,5 +28,7 @@ namespace Pony.Extensions
 
             return services;
         }
+
+
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Pony.Framework.Events;
 using FluentValidation;
 using Pony.Domain.Repositories;
+using Pony.Framework.Exceptions;
 
 namespace Pony.Domain.Mazes.Handlers
 {

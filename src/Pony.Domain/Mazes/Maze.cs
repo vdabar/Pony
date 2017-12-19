@@ -26,21 +26,11 @@ namespace Pony.Domain.Mazes
 
         public Maze(CreateMaze cmd) : base(cmd.Id)
         {
-            Cell[] maze;
-            Cell current;
-            var visitedStack = new Stack<Cell>();
-            var paths = new List<Stack<Cell>>();
             MazeWidth = cmd.MazeWidth;
             MazeHeight = cmd.MazeHeight;
             Difficulty = cmd.Difficulty;
             MazePlayerName = cmd.MazePlayerName;
-            maze = InitializeMaze();
-            Random rnd = new Random();
-            PonyPosition = rnd.Next(0, MazeHeight * MazeWidth);
-            current = maze[PonyPosition];
-            visitedStack.Push(current);
-            data = MazeToString(GenerateMaze(maze, current, null, visitedStack, paths));
-            PlaceObjects(paths, maze);
+            data = InitializeMazeCreation(cmd);
             GameState = new GameState
             {
                 State = State.Active,
@@ -57,6 +47,8 @@ namespace Pony.Domain.Mazes
             validator.ValidateCommand(cmd);
             return new Maze(cmd);
         }
+
+        #region objectsMovement
 
         public void MoveMazeObjects(MoveMazeObjects cmd, IValidator<MoveMazeObjects> validator)
         {
@@ -151,6 +143,10 @@ namespace Pony.Domain.Mazes
             return neighbours;
         }
 
+        #endregion objectsMovement
+
+        #region toString
+
         public override String ToString()
         {
             String stringMaze = "";
@@ -221,7 +217,24 @@ namespace Pony.Domain.Mazes
             }
         }
 
-        #region
+        #endregion toString
+
+        #region mazeCreation
+
+        public List<string>[] InitializeMazeCreation(CreateMaze cmd)
+        {
+            Cell[] maze;
+            Cell current;
+            var visitedStack = new Stack<Cell>();
+            var paths = new List<Stack<Cell>>();
+            maze = InitializeMaze();
+            Random rnd = new Random();
+            PonyPosition = rnd.Next(0, MazeHeight * MazeWidth);
+            current = maze[PonyPosition];
+            visitedStack.Push(current);
+            PlaceObjects(paths, maze);
+            return MazeToString(GenerateMaze(maze, current, null, visitedStack, paths));
+        }
 
         private List<string>[] MazeToString(Cell[] maze)
         {
@@ -367,6 +380,6 @@ namespace Pony.Domain.Mazes
             return maze;
         }
 
-        #endregion  mazeCreation
+        #endregion mazeCreation
     }
 }

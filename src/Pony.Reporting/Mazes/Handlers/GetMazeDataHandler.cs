@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Pony.Domain.Repositories;
+using Pony.Framework.Exceptions;
 using Pony.Framework.Queries;
 using Pony.Reporting.Mazes.Queries;
 using System;
@@ -24,7 +25,11 @@ namespace Pony.Reporting.Mazes.Handlers
         public async Task<MazeDetailsModel> RetrieveAsync(GetMaze query)
         {
             var dbEntity = await _mazeRepository.GetByIdAsync(query.Id);
-            return dbEntity != null ? _mapper.Map<MazeDetailsModel>(dbEntity) : null;
+            if (dbEntity == null)
+            {
+                throw new ApiException($"Maze with id: {query.Id} doesn't exists", 404);
+            }
+            return _mapper.Map<MazeDetailsModel>(dbEntity);
         }
     }
 }

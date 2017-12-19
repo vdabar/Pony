@@ -20,6 +20,10 @@ using Pony.Data.Repositories;
 using Pony.Extensions;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Swashbuckle.AspNetCore.Swagger;
+using Pony.Middleware;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace Pony
 {
@@ -38,8 +42,13 @@ namespace Pony
             services.AddOptions();
 
             services.AddMongoDB(Configuration);
-            //services.AddTransient<IMazeService, MazeService>();
-            services.AddMvc();
+            services.AddMemoryCache();
+            services.AddMvc(
+                config =>
+                {
+                    config.Filters.Add(typeof(CustomExceptionFilter));
+                });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
@@ -65,13 +74,6 @@ namespace Pony
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
-
-            app.UseDeveloperExceptionPage();
-            app.UseStatusCodePages();
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
 
             app.UseMvc();
         }
