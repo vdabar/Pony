@@ -1,10 +1,14 @@
 # Pony
-Pony is sample .Net Core application based on DDD and CQRS.
-
+Pony is sample .Net Core application based on DDD and CQRS that demonstrates basic features of ASP.NET Core in an API backend application algorithm, scapping. 
+In this application yoy can also find:
+ - Implemented Maze creation algorithm
+ - Web scrapping with caching
+ 
 # Technology
 - C#
 - ASP.NET Core
-- MongoDb
+- MongoDB
+- FluentValidation
 - DDD
 - CQRS
 
