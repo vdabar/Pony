@@ -21,7 +21,7 @@ Version supported:
 # How to run on local
 
 - Clone repository
-- Edit MongoDB connection string in appsettings.json
+- Edit MongoDB connection string in appsettings.json if needed
 ```
 cd <Base Solution Folder>
 dotnet restore
